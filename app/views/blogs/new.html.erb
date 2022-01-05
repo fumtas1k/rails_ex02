@@ -2,3 +2,4 @@
 <h1>新規投稿</h1>
 <%= render partial: "layouts/error_message", locals: {obj: @blog} %>
 <%= render partial: "form" %>
+<%= link_to "一覧", blogs_path, class: "btn btn-success" %>

@@ -1,5 +1,5 @@
 <h1>確認画面</h1>
-<%= form_with model: @blog, local: true do |form| %>
+<%= form_with model: @blog, url: blogs_path, local: true do |form| %>
   <%= form.hidden_field :title %>
   <%= form.hidden_field :content %>
   <div class="title">
@@ -11,5 +11,6 @@
     <h5>"内容(140文字以内)"</h5>
     <p><%= @blog.content %></p>
   </div>
-  <p><%= form.submit "投稿" %></p>
+  <%= form.submit "投稿", class: "btn btn-danger" %>
+  <%= form.submit "戻る", name: "back", class: "btn btn-success" %>
 <% end %>

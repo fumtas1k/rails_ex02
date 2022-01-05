@@ -5,20 +5,20 @@
 <% end %>
 
 <h1>ブログ一覧</h1>
-
+<%= link_to "新規投稿", new_blog_path, method: :get, class: "btn btn-primary" %>
 <table class="table table-striped">
   <tr>
     <th scope="col">タイトル(詳細)</th>
+    <th scope="col">更新日時</th>
     <th scope="col">編集</th>
     <th scope="col">削除</th>
   </tr>
   <% @blogs.each do |blog| %>
     <tr>
       <td><%= link_to blog.title, blog_path(blog.id) %></td>
+      <td><%= blog.updated_at.to_s(:datetime_jp) %></td>
       <td><%= link_to "編集", edit_blog_path(blog.id) %></td>
       <td><%= link_to "削除", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除しましか?"}  %></td>
     </tr>
   <% end %>
 </table>
-
-<%= link_to "新規投稿", new_blog_path, method: :get, class: "btn btn-primary" %>
