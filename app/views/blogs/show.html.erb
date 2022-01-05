@@ -1,2 +1,14 @@
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
+<h1>詳細</h1>
+<div class="title">
+  <h5>タイトル</h5>
+  <p><%= @blog.title %></p>
+</div>
+<div class="content">
+  <h5>内容</h5>
+  <p class="word-limit"><%= @blog.content %></p>
+</div>
+<div class= "updated_at">
+  <p>更新日時: <%= @blog.updated_at%></p>
+</div>
+<br>
+<%= link_to "一覧", blogs_path %>

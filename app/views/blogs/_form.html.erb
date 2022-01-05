@@ -1,20 +1,12 @@
 <%= form_with model: @blog, local: true do |form| %>
-  <table>
-    <tr>
-      <td><%= form.label :title, "タイトル" %></td>
-    </tr>
-    <tr>
-      <td><%= form.text_field :title %></td>
-    </tr>
-    <tr><td><br></td></tr>
-    <tr>
-      <td><%= form.label :content, "内容(140文字以内)" %></td>
-    </tr>
-    <tr>
-      <td><%= form.text_area :content %></td>
-    </tr>
-    <tr>
-      <td><%= form.submit value="投稿" %></td>
-    </tr>
-  </table>
+  <div class="title">
+    <h5><%= form.label :title, "タイトル" %></h5>
+    <p><%= form.text_field :title %></p>
+  </div>
+  <br>
+  <div class="content">
+    <h5><%= form.label :content, "内容(140文字以内)" %></h5>
+    <p><%= form.text_area :content %></p>
+  </div>
+  <p><%= form.submit "投稿" %></p>
 <% end %>

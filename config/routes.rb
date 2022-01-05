@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get "/", to: "blogs#index"
-  get 'blogs/confirm', to: "blogs#confirm"
-  resources :blogs
+  resources :blogs do
+    collection do
+      post :confirm
+    end
+  end
 end

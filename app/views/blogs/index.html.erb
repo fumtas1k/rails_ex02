@@ -1,16 +1,20 @@
-<h1>Blogs#index</h1>
+<% if !notice.nil? %>
+  <div class="alert alert-success">
+    <p><%= notice %></p>
+  </div>
+<% end %>
 
-<table class="table">
+<h1>ブログ一覧</h1>
+
+<table class="table table-striped">
   <tr>
-    <th>タイトル</th>
-    <th>詳細</th>
-    <th>編集</th>
-    <th>削除</th>
+    <th scope="col">タイトル(詳細)</th>
+    <th scope="col">編集</th>
+    <th scope="col">削除</th>
   </tr>
   <% @blogs.each do |blog| %>
     <tr>
-      <td><%= blog.title %></td>
-      <td><%= link_to "詳細", blog_path(blog.id) %></td>
+      <td><%= link_to blog.title, blog_path(blog.id) %></td>
       <td><%= link_to "編集", edit_blog_path(blog.id) %></td>
       <td><%= link_to "削除", blog_path(blog.id), method: :delete, data: {confirm: "本当に削除しましか?"}  %></td>
     </tr>

@@ -1,2 +1,15 @@
-<h1>Blogs#confirm</h1>
-<p>Find me in app/views/blogs/confirm.html.erb</p>
+<h1>確認画面</h1>
+<%= form_with model: @blog, local: true do |form| %>
+  <%= form.hidden_field :title %>
+  <%= form.hidden_field :content %>
+  <div class="title">
+    <h5>"タイトル"</h5>
+    <p><%= @blog.title %></p>
+  </div>
+  <br>
+  <div class="content">
+    <h5>"内容(140文字以内)"</h5>
+    <p><%= @blog.content %></p>
+  </div>
+  <p><%= form.submit "投稿" %></p>
+<% end %>
