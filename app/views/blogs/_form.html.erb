@@ -1,0 +1,20 @@
+<%= form_with model: @blog, local: true do |form| %>
+  <table>
+    <tr>
+      <td><%= form.label :title, "タイトル" %></td>
+    </tr>
+    <tr>
+      <td><%= form.text_field :title %></td>
+    </tr>
+    <tr><td><br></td></tr>
+    <tr>
+      <td><%= form.label :content, "内容(140文字以内)" %></td>
+    </tr>
+    <tr>
+      <td><%= form.text_area :content %></td>
+    </tr>
+    <tr>
+      <td><%= form.submit value="投稿" %></td>
+    </tr>
+  </table>
+<% end %>
